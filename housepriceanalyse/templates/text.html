@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search</title>
+  <script src="../static/search1.css"></script>-
+ <link rel="stylesheet" href="../static/search1.css">
+<script src="../static/jquery.min.js"></script>
+<script src="../static/echarts.min.js"></script>
+    <style>
+
+        .div2{
+            position :relative;
+            margin-top: 20%;
+            left:30%;
+
+        }
+         .submit{
+            background-color: #ffe18b;
+            border-radius:15px;
+            border-color:white;
+            border-style: hidden;
+        }
+        .wrap {
+		position: absolute;
+		top: 20%;
+		left: 20%;
+		margin-top: -86px;
+		margin-left: -89px;
+		text-align: center;
+	}
+video {        position: fixed;
+        right: 0;
+        {#min-width: 100%;#}
+        min-height: 100%;
+    max-width: 100%;
+        width: auto;
+        height: auto;
+        z-index: -999;
+
+    }
+
+        .button {
+  width: 280px;
+  height: 90px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #ffdbd2;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  }
+
+.button:hover {
+  background-color: #ffcbbc;
+  box-shadow: 0px 15px 20px rgba(45, 45, 45, 0.69);
+  color: #ffc3c3;
+  transform: translateY(-7px);
+}
+
+        .button2 {
+            float: right;
+  width: 280px;
+  height: 90px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #000;
+  background-color: #929194;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  }
+
+.button2:hover {
+  background-color: #636363;
+  box-shadow: 0px 15px 20px rgba(45, 45, 45, 0.69);
+  color: #656565;
+  transform: translateY(-7px);
+}
+        .a1{
+		  text-align: center;
+		  font-size: 5em;
+		  margin-bottom: 0;
+		  margin-top: 0;
+		  line-height: 1;
+		  text-decoration: none;
+		  color: #fff;
+            margin-left: 35%;
+		}
+
+		.a1:nth-child(1) {
+		  font-family: Monoton;
+		  animation: neon1 1.5s ease-in-out infinite alternate;
+		}
+    </style>
+</head>
+<body >
+<video src = "../static/bg3.mp4" type = "video/mp4" autoplay muted loop>
+
+</video>
+<a class="a1" >
+		    搜索城市房价
+		</a>
+<div style="margin-top: -80px">
+    <a href="/MULU"><button class="button" >
+       首页
+   </button></a>
+    <a href="/"><button class ="button2">
+        退出
+    </button></a>
+</div>
+<form action="/search">
+    <div class="search-box">
+            <input class="search-txt" type="text" name="city" placeholder="请输入城市">
+        <input type="submit" class="submit" >
+    </div>
+</form>
+
+<div id="main" class = div2  style="width: 600px;height: 400px;"></div>
+<script>
+    // 3.初始化echarts
+		var ec = echarts.init(document.getElementById("main"))
+        var regions
+            regions ={{ region|tojson }}
+
+        var prices= {{ price }}
+        console.log(regions)
+		var  option ={
+			title:{
+				text:"房价"
+			},
+			xAxis:{
+				data:regions
+			},
+			yAxis:{},
+			toolbox:{
+				feature:{
+					saveAsImage:{
+						show:true
+					},
+					restore:{
+						show:true
+					},
+					dataView:{
+						show:true
+					},
+					dataZoom:{
+						show:true
+					}
+				}
+			},
+			tooltip:{
+				trigger:'axis'
+			},
+
+			series:[
+
+				 {
+				   name:"房价",
+				   type:"bar",
+				   data:prices
+				 }
+		    ]
+		}
+		//5.绑定
+		ec.setOption(option)
+
+
+</script>
+
+</body>
+</html>
