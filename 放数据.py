@@ -9,7 +9,7 @@ import pymysql
 
 #1.和数据库建立连接
 conn=pymysql.connect(
-    host="localhost",
+    host="localhost", #host name
     port=3306,
     db="houseprice",
     user="root",
