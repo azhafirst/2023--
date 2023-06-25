@@ -2,36 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>UserRegister</title>
+    <title>城市房价分析系统</title>
     <style>
-body {
-    background-color: lightblue;
-}
+    body{
+        background-color: lightblue;
+    }
     </style>
     <link rel="stylesheet" href="../static/Login2.css" />
 </head>
 <body>
-<div align="center">
-
-
     <div class="container">
-        <h1>Please Register</h1>
+        <h1>用户注册</h1>
         <form action="/UserRegister">
             <div class="form-control">
                 <input type="text" required name="uname">
                 <label>
-                    Uname:
+                    用户名：
                 </label>
             </div>
             <div class="form-control">
                 <input type="password" required name="upwd">
-                <label>Password</label>
+                <label>
+                    密码：
+                </label>
             </div>
-            <button class="btn" type="submit">Register</button>
-            <p class="text"> have an account? <a href="/userLogin">Login</a> </p>
+            <button class="btn" type="submit">注册</button>
+            <p class="text"> 已有帐号? <a href="/Login">点此登录</a> </p>
         </form>
     </div>
-</div>
-<script src="../static/Login1.js"></script>
+    <script src="../static/Login1.js"></script>
 </body>
 </html>

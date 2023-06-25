@@ -3,28 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>城市房价分析系统</title>
     <link rel="stylesheet" href="../static/Login2.css" />
 </head>
 <body>
     <div class="container">
-        <h1>Please Login</h1>
+        <h1>用户登录</h1>
         <form action="/Login">
             <div class="form-control">
                 <input type="text" required name="uname">
                 <label>
-                    ID
+                    用户名：
                 </label>
             </div>
             <div class="form-control">
                 <input type="password" required name="upwd">
-                <label>Password</label>
+                <label>
+                    密码：
+                </label>
             </div>
-            <button class="btn" type="submit">Login</button>
-            <p class="text">Don't have an account? <a href="/Uregister">Register</a> </p>
+            <button class="btn" type="submit">登录</button>
+            <p class="text">没有账号? <a href="/Uregister">点此注册</a> </p>
         </form>
     </div>
-
     <script src="../static/Login1.js"></script>
 </body>
 </html>
