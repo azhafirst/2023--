@@ -23,7 +23,7 @@ def ZY():
 @app.route("/Login")
 def Login():
     conn = pymysql.connect(
-        host="127.0.0.1",
+        host="localhost",
         port=3306,
         db="houseprice",
         user="root",
