@@ -3,188 +3,194 @@
 <head>
     <meta charset="UTF-8">
     <title>搜索地区房价走势</title>
-  <script src="../static/search1.css"></script>-
- <link rel="stylesheet" href="../static/search1.css">
-<script src="../static/jquery.min.js"></script>
-<script src="../static/echarts.min.js"></script>
+    <script src="../static/search1.css"></script>
+    -
+    <link rel="stylesheet" href="../static/search1.css">
+    <script src="../static/jquery.min.js"></script>
+    <script src="../static/echarts.min.js"></script>
     <style>
-        body{
-            background-image: url("../static/07.jpg");
-			background-size: 1653px 840px; 
+        body {
+            background: -webkit-linear-gradient(left, #ffdbd2, #FFB800);
+            background-size: 1653px 840px;
         }
-        .div2{
-            position :relative;
+
+        .div2 {
+            position: relative;
             margin-top: 20%;
-            left:30%;
+            left: 30%;
 
         }
-         .submit{
+
+        .submit {
             background-color: #ffe18b;
-            border-radius:15px;
-            border-color:white;
+            border-radius: 15px;
+            border-color: white;
             border-style: hidden;
         }
 
-video {        position: fixed;
-        right: 0;
-        min-width: 100%;
-        min-height: 100%;
-        width: auto;
-        height: auto;
-        z-index: -999;
+        video {
+            position: fixed;
+            right: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -999;
 
-    }
+        }
 
+        video {
+            position: fixed;
+            right: 0;
+            max-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -999;
+        }
 
-video {        position: fixed;
-        right: 0;
-        max-width: 100%;
-        min-height: 100%;
-        width: auto;
-        height: auto;
-        z-index: -999;
+        .button {
+            width: 280px;
+            height: 90px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 25px;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            font-weight: 500;
+            color: #000;
+            background-color: yellowgreen;
+            border: none;
+            border-radius: 45px;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease 0s;
+            cursor: pointer;
+            outline: none;
+        }
 
-    }
-     .button {
-  width: 280px;
-  height: 90px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 25px;
-  text-transform: uppercase;
-  letter-spacing: 2.5px;
-  font-weight: 500;
-  color: #000;
-  background-color: yellowgreen;
-  border: none;
-  border-radius: 45px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease 0s;
-  cursor: pointer;
-  outline: none;
-  }
-
-.button:hover {
-  background-color:yellowgreen;
-  box-shadow: 0px 15px 20px rgba(45, 45, 45, 0.69);
-  color: black;
-  transform: translateY(-7px);
-}
+        .button:hover {
+            background-color: yellowgreen;
+            box-shadow: 0px 15px 20px rgba(45, 45, 45, 0.69);
+            color: black;
+            transform: translateY(-7px);
+        }
 
         .button2 {
             float: right;
-  width: 280px;
-  height: 90px;
-  font-family: 'Roboto', sans-serif;
-  font-size: 25px;
-  text-transform: uppercase;
-  letter-spacing: 2.5px;
-  font-weight: 500;
-  color: #000;
-  background-color: goldenrod;
-  border: none;
-  border-radius: 45px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease 0s;
-  cursor: pointer;
-  outline: none;
-  }
+            width: 280px;
+            height: 90px;
+            font-family: 'Roboto', sans-serif;
+            font-size: 25px;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            font-weight: 500;
+            color: #000;
+            background-color: goldenrod;
+            border: none;
+            border-radius: 45px;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease 0s;
+            cursor: pointer;
+            outline: none;
+        }
 
-.button2:hover {
-  background-color: goldenrod;
-  box-shadow: 0px 15px 20px rgba(45, 45, 45, 0.69);
-  color: black;
-  transform: translateY(-7px);
-}
-        .a1{
+        .button2:hover {
+            background-color: goldenrod;
+            box-shadow: 0px 15px 20px rgba(45, 45, 45, 0.69);
+            color: black;
+            transform: translateY(-7px);
+        }
+
+        .a1 {
             text-align: center;
-		    font-size: 5em;
-		    margin-bottom: 0;
-		    margin-top: 0;
-		    line-height: 1;
-		    text-decoration: none;
-		    color: #fff;
+            font-size: 5em;
+            margin-bottom: 0;
+            margin-top: 0;
+            line-height: 1;
+            text-decoration: none;
+            color: #fff;
             margin-left: 25%;
+        }
 
-		}
-
-		.a1:nth-child(1) {
-		  font-family: Monoton;
-		  animation: neon1 1.5s ease-in-out infinite alternate;
-		}
+        .a1:nth-child(1) {
+            font-family: Monoton;
+            animation: neon1 1.5s ease-in-out infinite alternate;
+        }
     </style>
 </head>
-<body >
-<video src = "../static/bg10.mp4" type = "video/mp4" autoplay muted loop>
+<body>
+<video src="../static/bg10.mp4" type="video/mp4" autoplay muted loop>
 
 </video>
-<a class="a1" style="color: black;" >
+<a class="a1" style="color: black;">
     搜索地区房价走势
 </a>
 <div style="margin-top: -80px">
-    <a href="/MULU"><button class="button" style="margin-top: 30px;">
-       首页
-   </button></a>
-    <a href="/"><button class ="button2" style="margin-top: 30px;">
-        退出
-    </button></a>
-<form action="/searchZX">
-    <div class="search-box">
+    <a href="/MULU">
+        <button class="button" style="margin-top: 30px;">
+            首页
+        </button>
+    </a>
+    <a href="/">
+        <button class="button2" style="margin-top: 30px;">
+            退出
+        </button>
+    </a>
+    <form action="/searchZX">
+        <div class="search-box">
             <input class="search-txt" type="text" name="region" id="region" placeholder="请输入城区,以空格分隔">
-        <input type="submit" class="submit" >
-    </div>
-</form>
+            <input type="submit" class="submit">
+        </div>
+    </form>
 
-<div id="main" class = div2  style="width: 600px;height: 400px;"></div>
-<script>
-    // 3.初始化echarts
-		var ec = echarts.init(document.getElementById("main"))
-        var region = {{ region | tojson }}
-        if(region ==='无'){
+    <div id="main" class=div2 style="width: 600px;height: 400px;"></div>
+    <script>
+        // 3.初始化echarts
+        var ec = echarts.init(document.getElementById("main"))
+        var region =
+        {{ region | tojson }}
+        if (region === '无') {
             alert("暂无此区数据！")
+        } else {
+            var DT =
+            {{ data | tojson }}
+            var labels = region
+            var option = {
+                title: {
+                    text: "各区房价"
+                },
+                xAxis: {
+                    data: ['now', 22_01, 22_02, 22_03, 22_04, 22_05, 22_06, '预测1', '预测2']
+                },
+                yAxis: {},
+                legend: {
+                    data: labels
+                },
+                toolbox: {
+                    feature: {
+                        saveAsImage: {
+                            show: true
+                        },
+                        restore: {
+                            show: true
+                        },
+                        dataView: {
+                            show: true
+                        },
+                        dataZoom: {
+                            show: true
+                        }
+                    }
+                },
+                tooltip: {
+                    trigger: 'axis'
+                },
+
+                series: DT
+            }
+            //5.绑定
+            ec.setOption(option)
         }
-        else{
-            var DT = {{ data | tojson }}
-        var labels=region
-		var  option ={
-			title:{
-				text:"各区房价"
-			},
-			xAxis:{
-				data:['now',22_01,22_02,22_03,22_04,22_05,22_06,'预测1','预测2']
-			},
-			yAxis:{},
-            legend:{
-			  data: labels
-            },
-			toolbox:{
-				feature:{
-					saveAsImage:{
-						show:true
-					},
-					restore:{
-						show:true
-					},
-					dataView:{
-						show:true
-					},
-					dataZoom:{
-						show:true
-					}
-				}
-			},
-			tooltip:{
-				trigger:'axis'
-			},
-
-			series:DT
-		}
-		//5.绑定
-		ec.setOption(option)
-        }
-
-
-
-</script>
+    </script>
 
 </body>
 </html>
