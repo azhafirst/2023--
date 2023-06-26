@@ -1,8 +1,7 @@
-body{
+body {
     margin: 0;
     padding: 0;
-    /* background: #e94118; */
-    background-color: #aac0ff;
+    background: -webkit-linear-gradient(left, #aac0ff, #ffdbd2);
 }
 
 .search-box {
@@ -17,6 +16,7 @@ body{
     display: flex;
     justify-content: center;
 }
+
 .search-box2 {
     position: absolute;
     top: 20%;
@@ -43,32 +43,35 @@ body{
     justify-content: center;
 }
 
-.search-box:hover>.search-txt{
-    width: 200px;
-    padding: 0 6px;
-}
-.search-box2:hover>.search-txt2{
+.search-box:hover > .search-txt {
     width: 200px;
     padding: 0 6px;
 }
 
-.search-box3:hover>.search-txt3{
+.search-box2:hover > .search-txt2 {
     width: 200px;
     padding: 0 6px;
 }
 
-.search-box:hover>.search-btn{
+.search-box3:hover > .search-txt3 {
+    width: 200px;
+    padding: 0 6px;
+}
+
+.search-box:hover > .search-btn {
     background: white;
 }
-.search-box2:hover>.search-btn{
+
+.search-box2:hover > .search-btn {
     background: white;
 }
-.search-box3:hover>.search-btn{
+
+.search-box3:hover > .search-btn {
     background: white;
 }
 
 
-.search-btn{
+.search-btn {
     float: right;
     width: 40px;
     height: 40px;
@@ -80,7 +83,7 @@ body{
     transition: 0.4s;
 }
 
-.search-txt{
+.search-txt {
     border: none;
     background: none;
     outline: none;
@@ -93,7 +96,7 @@ body{
     width: 0px;
 }
 
-.search-txt2{
+.search-txt2 {
     border: none;
     background: none;
     outline: none;
@@ -105,7 +108,8 @@ body{
     line-height: 40px;
     width: 0px;
 }
-.search-txt3{
+
+.search-txt3 {
     border: none;
     background: none;
     outline: none;
