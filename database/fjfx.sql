@@ -1913,17 +1913,18 @@ CREATE TABLE `用户表`  (
   `id` int(50) NOT NULL AUTO_INCREMENT,
   `用户名` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   `密码` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `邮箱` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of 用户表
 -- ----------------------------
-INSERT INTO `用户表` VALUES (1, 'sxy', 'sxy');
-INSERT INTO `用户表` VALUES (2, 'lzt', 'lzt');
-INSERT INTO `用户表` VALUES (3, 'zw', 'zw');
-INSERT INTO `用户表` VALUES (4, 'sty', 'sty');
-INSERT INTO `用户表` VALUES (5, 'lyp', 'lyp');
-INSERT INTO `用户表` VALUES (6, 'qb', 'qb');
+INSERT INTO `用户表` VALUES (1, 'sxy', 'sxy', 'sxy@qq.com');
+INSERT INTO `用户表` VALUES (2, 'lzt', 'lzt', 'lzt@qq.com');
+INSERT INTO `用户表` VALUES (3, 'zw', 'zw', 'zw@qq.com');
+INSERT INTO `用户表` VALUES (4, 'sty', 'sty', 'sty@qq.com');
+INSERT INTO `用户表` VALUES (5, 'lyp', 'lyp', 'lyp@qq.com');
+INSERT INTO `用户表` VALUES (6, 'qb', 'qb', 'qb@qq.com');
 
 SET FOREIGN_KEY_CHECKS = 1;
