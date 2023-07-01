@@ -1,16 +1,17 @@
 import pickle
 
 from flask import Flask, render_template, request, jsonify
-import pymysql
 import json
 import pymysql
 from sklearn import linear_model
 import numpy as np
+import code_sender
 """
 static: CSS文件,JS文件,图片
 templates:html网页
 """
 app = Flask(__name__)
+identifyCode = None
 
 @app.route("/userLogin")
 def userLogin():
@@ -77,13 +78,22 @@ def SearchText():
     regions=[' ']
     return render_template("text.html",region=regions)
 
+@app.route("/SendCode")
+def SendCode():
+    email = request.args.get("uemail")
+    identifyCode = code_sender.IdentifyCode(email)
+
 @app.route("/UserRegister")
 def UserRegister():
     #获取前端的数据
     #获取用户名
     name = request.args.get("uname")
     pwd = request.args.get("upwd")
-    print("姓名：",name,"密码:",pwd)
+    email = request.args.get("uemail")
+    code = request.args.get("ucode")
+    # print("姓名：",name,"密码:",pwd)
+    if (code != identifyCode) or (identifyCode is None):
+        return render_template("UserRegister.html")
     #到数据库中添加数据
     conn = pymysql.connect(
         host="127.0.0.1",
@@ -94,8 +104,8 @@ def UserRegister():
         charset="utf8"
     )
     cls =conn.cursor()
-    sql="insert into 用户表 values(null,%s,%s)"
-    rows = cls.execute(sql,[name,pwd])
+    sql="insert into 用户表 values(null,%s,%s,%s)"
+    rows = cls.execute(sql,[name,pwd,email])
     print(rows)
     conn.commit()
     if rows>=1:  #添加成功
