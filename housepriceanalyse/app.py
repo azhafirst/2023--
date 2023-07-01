@@ -81,6 +81,8 @@ def SearchText():
 @app.route("/SendCode")
 def SendCode():
     email = request.args.get("uemail")
+    if email is None:
+        return render_template("UserRegister.html")
     identifyCode = code_sender.IdentifyCode(email)
 
 @app.route("/UserRegister")
