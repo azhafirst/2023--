@@ -4,32 +4,47 @@
     <meta charset="UTF-8">
     <title>用户注册</title>
     <style>
-    body{
-        background-color: lightblue;
-    }
+        body {
+            background-color: lightblue;
+        }
     </style>
-    <link rel="stylesheet" href="../static/Login2.css" />
+    <link rel="stylesheet" href="../static/Login2.css"/>
 </head>
 <body>
-    <div class="container">
-        <h1>用户注册</h1>
-        <form action="/UserRegister">
-            <div class="form-control">
-                <input type="text" required name="uname">
-                <label>
-                    用户名：
-                </label>
-            </div>
-            <div class="form-control">
-                <input type="password" required name="upwd">
-                <label>
-                    密码：
-                </label>
-            </div>
-            <button class="btn" type="submit">注册</button>
-            <p class="text"> 已有帐号? <a href="/userLogin">点此登录</a> </p>
+<div class="container">
+    <h1>用户注册</h1>
+    <form action="/UserRegister">
+        <div class="form-control">
+            <input type="text" required name="uname">
+            <label>
+                用户名：
+            </label>
+        </div>
+        <div class="form-control">
+            <input type="password" required name="upwd">
+            <label>
+                密码：
+            </label>
+        </div>
+        <div class="form-control">
+            <input type="text" required name="uemail">
+            <label>
+                邮箱：
+            </label>
+        </div>
+        <div class="form-control">
+            <input type="text" required name="ucode">
+            <label>
+                验证码：
+            </label>
+        </div>
+        <form action="/SendCode">
+            <button class="btn_1" type="submit">点击发送验证码</button>
         </form>
-    </div>
-    <script src="../static/Login1.js"></script>
+        <button class="btn" type="submit">注册</button>
+    </form>
+    <p class="text"> 已有帐号? <a href="/userLogin">点此登录</a></p>
+</div>
+<script src="../static/Login1.js"></script>
 </body>
 </html>
